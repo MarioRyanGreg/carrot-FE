@@ -1,0 +1,48 @@
+{
+  "private": true,
+  "entry": {
+    "index": "./index.js"
+  },
+  "dependencies": {
+    "ajv": "^6.5.3",
+    "ajv-keywords": "^3.2.0",
+    "antd": "^3.8.1",
+    "axios": "^0.18.0",
+    "mime": "^2.3.1",
+    "moment": "^2.19.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "atool-build": "^1.0.2",
+    "atool-test-mocha": "^0.2.1",
+    "babel-eslint": "^7.0.0",
+    "babel-plugin-import": "^1.0.1",
+    "babel-plugin-transform-runtime": "^6.8.0",
+    "babel-runtime": "^6.9.2",
+    "dora": "^0.5.0",
+    "dora-plugin-webpack": "^0.8.1",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "expect": "^1.20.1",
+    "redbox-react": "^1.2.6"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "build": "atool-build",
+    "lint": "eslint --ext .js,.jsx src/",
+    "start": "dora --plugins webpack",
+    "test": "atool-test-mocha ./**/__tests__/*-test.js"
+  }
+}
